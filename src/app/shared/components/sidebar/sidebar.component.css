@@ -1,0 +1,10 @@
+.sidebar {
+  min-height: -webkit-fill-available;
+  width: 250px;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+}

@@ -1,0 +1,23 @@
+<nav class="sidebar bg-dark text-white p-3">
+  <h5 class="mb-4">Admin Panel</h5>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a [routerLink]="['/dashboard']" class="nav-link text-white">{{
+        "DASHBOARD" | translate
+      }}</a>
+    </li>
+    <!-- Add more links -->
+    <li class="nav-item">
+      <a [routerLink]="['/products']" class="nav-link text-white">{{
+        "PRODUCTS" | translate
+      }}</a>
+    </li>
+
+    <!-- Users-->
+    <li class="nav-item">
+      <a [routerLink]="['/users']" class="nav-link text-white">{{
+        "USERS" | translate
+      }}</a>
+    </li>
+  </ul>
+</nav>
