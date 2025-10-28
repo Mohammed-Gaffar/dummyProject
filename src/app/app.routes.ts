@@ -19,11 +19,7 @@ export const routes: Routes = [
         canActivate: [authGuard],
       },
       { path: 'products', children: productsRoutes, canActivate: [authGuard] },
-      {
-        path: 'users',
-        canActivate: [authGuard],
-        children: UserRoutes,
-      },
+      { path: 'users', children: UserRoutes, canActivate: [authGuard] },
     ],
   },
 ];
