@@ -21,6 +21,7 @@ export class UserService {
   }
 
   updateUser(id: number, userData: Partial<user>) {
+    debugger;
     return this.http.put<user>(`${this.api_url}/${id}`, userData);
   }
 

@@ -15,7 +15,8 @@ export class UserProfileComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -31,5 +32,7 @@ export class UserProfileComponent implements OnInit {
 
   onEdit() {}
 
-  onBack() {}
+  onBack() {
+    this.router.navigate(['/users']);
+  }
 }

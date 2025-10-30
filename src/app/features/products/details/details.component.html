@@ -1,3 +1,96 @@
-<p>
-  details works!
-</p>
+<div class="container mt-5" *ngIf="product">
+  <div class="row">
+    <!-- Image Gallery -->
+    <div class="col-md-6">
+      <img
+        [src]="product.thumbnail"
+        class="img-fluid border rounded mb-3"
+        alt="Main Image"
+      />
+      <div class="d-flex flex-wrap gap-2">
+        <img
+          *ngFor="let img of product.images"
+          [src]="img"
+          class="img-thumbnail"
+          style="width: 80px; height: 80px; object-fit: cover"
+        />
+      </div>
+    </div>
+
+    <!-- Product Info -->
+    <div class="col-md-6">
+      <h2>{{ product.title }}</h2>
+      <p class="text-muted">{{ product.category }} • {{ product.brand }}</p>
+      <h4 class="text-success">
+        ${{ product.price }}
+        <small class="text-danger">-{{ product.discountPercentage }}%</small>
+      </h4>
+      <p><strong>SKU:</strong> {{ product.sku }}</p>
+      <p><strong>Availability:</strong> {{ product.availabilityStatus }}</p>
+      <p><strong>Stock:</strong> {{ product.stock }} units</p>
+      <p><strong>Minimum Order:</strong> {{ product.minimumOrderQuantity }}</p>
+      <p class="mt-3">{{ product.description }}</p>
+
+      <button class="btn btn-primary mt-3">Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Additional Info -->
+  <div class="row mt-5">
+    <div class="col-md-4">
+      <h5>Shipping</h5>
+      <p>{{ product.shippingInformation }}</p>
+    </div>
+    <div class="col-md-4">
+      <h5>Warranty</h5>
+      <p>{{ product.warrantyInformation }}</p>
+    </div>
+    <div class="col-md-4">
+      <h5>Return Policy</h5>
+      <p>{{ product.returnPolicy }}</p>
+    </div>
+  </div>
+
+  <!-- Dimensions & Meta -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <h5>Dimensions</h5>
+      <ul class="list-group">
+        <li class="list-group-item">
+          Width: {{ product.dimensions.width }} cm
+        </li>
+        <li class="list-group-item">
+          Height: {{ product.dimensions.height }} cm
+        </li>
+        <li class="list-group-item">
+          Depth: {{ product.dimensions.depth }} cm
+        </li>
+        <li class="list-group-item">Weight: {{ product.weight }} kg</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h5>Metadata</h5>
+      <ul class="list-group">
+        <li class="list-group-item">Created: {{ product.meta.createdAt }}</li>
+        <li class="list-group-item">Updated: {{ product.meta.updatedAt }}</li>
+        <li class="list-group-item">Barcode: {{ product.meta.barcode }}</li>
+        <li class="list-group-item">QR Code: {{ product.meta.qrCode }}</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Reviews -->
+  <div class="mt-5">
+    <h4>Customer Reviews</h4>
+    <div *ngFor="let review of product.reviews" class="border rounded p-3 mb-3">
+      <div class="d-flex justify-content-between">
+        <strong>{{ review.reviewerName }}</strong>
+        <span class="text-warning">★ {{ review.rating }}</span>
+      </div>
+      <p class="mb-1">{{ review.comment }}</p>
+      <small class="text-muted"
+        >{{ review.date }} • {{ review.reviewerEmail }}</small
+      >
+    </div>
+  </div>
+</div>

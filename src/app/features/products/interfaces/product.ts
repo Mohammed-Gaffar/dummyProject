@@ -21,6 +21,9 @@ export interface Product {
   meta: Meta;
   thumbnail: string;
   images: string[];
+  Dimensions: Dimensions;
+  Review: Review;
+  Meta: Meta;
 }
 
 export interface Dimensions {

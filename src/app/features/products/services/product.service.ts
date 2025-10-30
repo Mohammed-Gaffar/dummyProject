@@ -2,15 +2,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
-
-export interface Product {
-  id: number;
-  title: string;
-  description: string;
-  price: number;
-  thumbnail: string;
-  // Add more fields as needed
-}
+import { Product } from '../interfaces/product';
 
 @Injectable({ providedIn: 'root' })
 export class ProductService {
@@ -25,7 +17,7 @@ export class ProductService {
   }
 
   getById(id: number): Observable<Product> {
-    return this.http.get<Product>(`${this.apiUrl}/${id}`);
+    return this.http.get<Product>(`${this.apiUrl}/${id}`).pipe();
   }
 
   search(query: string): Observable<Product[]> {

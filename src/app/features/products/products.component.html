@@ -84,7 +84,12 @@
           <button class="btn btn-primary w-100 mb-2">
             <i class="bi bi-cart-plus"></i> Add to Cart
           </button>
-          <button class="btn btn-outline-secondary w-100">View Details</button>
+          <button
+            class="btn btn-outline-secondary w-100"
+            (click)="viewDetails(product.id)"
+          >
+            View Details
+          </button>
         </div>
       </div>
     </div>
