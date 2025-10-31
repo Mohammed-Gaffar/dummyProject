@@ -2,7 +2,8 @@ import { Routes } from '@angular/router';
 import { ProductsComponent } from './products.component';
 import { DetailsComponent } from './details/details.component';
 import { authGuard } from '../../core/services/guard/auth.guard';
-import { LoginComponent } from '../login/login.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { routes } from '../../app.routes';
 
 export const productsRoutes: Routes = [
   {
@@ -14,6 +15,11 @@ export const productsRoutes: Routes = [
   {
     path: 'details/:id',
     component: DetailsComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'categories',
+    component: CategoriesComponent,
     canActivate: [authGuard],
   },
 ];

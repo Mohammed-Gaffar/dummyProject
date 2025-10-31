@@ -3,7 +3,7 @@ import { authGuard } from './core/services/guard/auth.guard';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { LoginComponent } from './features/login/login.component';
 import { productsRoutes } from './features/products/products.routing';
-import { LayoutComponent } from './shared/components/layout/layout.component';
+import { LayoutComponent } from './shared/layout/layout.component';
 import { UserRoutes } from './features/user/user.routing';
 
 export const routes: Routes = [

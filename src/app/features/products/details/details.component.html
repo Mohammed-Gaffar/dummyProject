@@ -11,6 +11,7 @@
         <img
           *ngFor="let img of product.images"
           [src]="img"
+          title="img"
           class="img-thumbnail"
           style="width: 80px; height: 80px; object-fit: cover"
         />
@@ -54,7 +55,7 @@
   <!-- Dimensions & Meta -->
   <div class="row mt-4">
     <div class="col-md-6">
-      <h5>Dimensions</h5>
+      <h5>{{ "Dimensions" | translate }}</h5>
       <ul class="list-group">
         <li class="list-group-item">
           Width: {{ product.dimensions.width }} cm

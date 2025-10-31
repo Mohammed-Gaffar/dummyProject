@@ -46,3 +46,10 @@ export interface Meta {
   barcode: string;
   qrCode: string;
 }
+
+//product categories modules
+export interface productCategory {
+  slug: string;
+  name: string;
+  url: string;
+}

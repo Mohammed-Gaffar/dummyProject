@@ -3,12 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from '../interfaces/product';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrls: ['./details.component.css'],
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
 })
 export class DetailsComponent implements OnInit {
   productId!: string | any;

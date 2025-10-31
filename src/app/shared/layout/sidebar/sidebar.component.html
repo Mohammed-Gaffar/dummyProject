@@ -1,0 +1,49 @@
+<nav class="sidebar bg-dark text-white p-3">
+  <h5 class="mb-4">Admin Panel</h5>
+  <ul class="nav flex-column">
+    <!-- Dashboard -->
+    <li class="nav-item">
+      <a [routerLink]="['/dashboard']" class="nav-link text-white">
+        {{ "DASHBOARD" | translate }}
+      </a>
+    </li>
+
+    <!-- Products with Bootstrap collapse -->
+    <li class="nav-item">
+      <a
+        class="nav-link text-white"
+        data-bs-toggle="collapse"
+        href="#productsSubmenu"
+        role="button"
+        aria-expanded="false"
+        aria-controls="productsSubmenu"
+      >
+        {{ "PRODUCTS" | translate }}
+      </a>
+      <div class="collapse ps-3" id="productsSubmenu">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a [routerLink]="['/products/']" class="nav-link text-white">
+              {{ "ALL_PRODUCTS" | translate }}
+            </a>
+          </li>
+          <li class="nav-item">
+            <a
+              [routerLink]="['/products/categories']"
+              class="nav-link text-white"
+            >
+              {{ "PRODUCT_CATEGORIES" | translate }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </li>
+
+    <!-- Users -->
+    <li class="nav-item">
+      <a [routerLink]="['/users']" class="nav-link text-white">
+        {{ "USERS" | translate }}
+      </a>
+    </li>
+  </ul>
+</nav>
