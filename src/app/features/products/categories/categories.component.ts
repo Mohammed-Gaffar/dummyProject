@@ -24,7 +24,6 @@ export class CategoriesComponent implements OnInit {
     this.productService
       .getProductsCategories()
       .subscribe((res: productCategory[]) => {
-        debugger;
         this.productsCategories = res;
       });
   }

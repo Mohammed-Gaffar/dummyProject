@@ -4,6 +4,7 @@ import { DetailsComponent } from './details/details.component';
 import { authGuard } from '../../core/services/guard/auth.guard';
 import { CategoriesComponent } from './categories/categories.component';
 import { routes } from '../../app.routes';
+import { ProductOfCategoreyComponent } from './productOfCategorey/productOfCategorey.component';
 
 export const productsRoutes: Routes = [
   {
@@ -20,6 +21,11 @@ export const productsRoutes: Routes = [
   {
     path: 'categories',
     component: CategoriesComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'categories/:categoryName',
+    component: ProductOfCategoreyComponent,
     canActivate: [authGuard],
   },
 ];

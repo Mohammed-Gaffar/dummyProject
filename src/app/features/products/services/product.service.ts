@@ -20,6 +20,12 @@ export class ProductService {
     return this.http.get<productCategory[]>(this.apiUrl + '/categories').pipe();
   }
 
+  getProductsByCategory(catName: string): Observable<Product[]> {
+    return this.http
+      .get<{ products: Product[] }>(this.apiUrl + '/category/' + catName)
+      .pipe(map((res) => res.products));
+  }
+
   getById(id: number): Observable<Product> {
     return this.http.get<Product>(`${this.apiUrl}/${id}`).pipe();
   }
