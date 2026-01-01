@@ -132,4 +132,16 @@ export class DashboardComponent implements AfterViewInit, OnDestroy {
       },
     });
   }
+
+  hideDiv() {
+    const div1 = document.getElementsByName('dev1');
+    const div2 = document.getElementsByName('dev2');
+    if (div1?.[0]?.style.display !== 'none') {
+      div1[0].style.display = 'none';
+      div2?.[0]?.style.setProperty('display', 'block');
+    } else {
+      div1[0].style.display = 'block';
+      div2?.[0]?.style.setProperty('display', 'none');
+    }
+  }
 }
